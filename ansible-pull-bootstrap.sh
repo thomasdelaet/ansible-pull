@@ -12,4 +12,4 @@ KEY=""
 #    --verbose \
 #    --tags ansible
 
-echo "$(hostname --short)" > /etc/test
+hostname --short > /etc/test
