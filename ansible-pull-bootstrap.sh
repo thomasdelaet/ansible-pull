@@ -1,15 +1,14 @@
 #!/bin/sh
 
-KEY=""
+KEY="/root/.ssh/deployment_key"
 
 #just run to enable ansible-pull timer when booted
-
-#ansible-pull \
-#    -U "git@github.com:thomasdelaet/ansible.git" \
-#    -i "$(hostname --short)" \
-#    --private-key ${KEY} \
-#    --accept-host-key \
-#    --verbose \
-#    --tags ansible
-
-hostname --short > /etc/test
+ansible-pull \
+    --verbose \
+    --private-key ${KEY} \
+    -i "$(hostname --short)" \
+    -l "$(hostname --short)" \
+    -U "git@github.com:thomasdelaet/ansible.git" \
+    --accept-host-key \
+    --tags ansible_pull_bootstrap \
+    --checkout main
