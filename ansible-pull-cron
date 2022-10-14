@@ -1,0 +1,2 @@
+#Ansible: run ansible-pull
+*/10 * * * * root "/root/ansible-pull.sh"
