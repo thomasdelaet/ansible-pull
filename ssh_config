@@ -1,0 +1,6 @@
+Host github.com
+    Hostname github.com
+    IdentityFile /root/.ssh/deployment_key
+    IdentitiesOnly yes
+    #CheckHostIP no
+    StrictHostKeyChecking accept-new
