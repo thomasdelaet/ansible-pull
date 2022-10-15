@@ -11,4 +11,7 @@ ansible-pull \
     -U "git@github.com:thomasdelaet/ansible.git" \
     --accept-host-key \
     --full \
-    --checkout main
+    --checkout main \
+    --directory /root/ansible \
+    --force \
+    --sleep 120
