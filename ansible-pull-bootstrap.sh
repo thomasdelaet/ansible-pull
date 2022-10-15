@@ -7,4 +7,4 @@ mkdir -p /etc/ansible
 echo "$(hostname --short) ansible_connection=local" > /etc/ansible/hosts
 git clone git@github.com:thomasdelaet/ansible.git /root/ansible
 chown -R root:root /root
-chmod -R o-rwx,g-rwc /root
+chmod -R o-rwx,g-rwx /root
