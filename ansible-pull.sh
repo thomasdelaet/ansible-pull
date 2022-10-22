@@ -2,9 +2,10 @@
 
 KEY="/root/.ssh/deployment_key"
 
+ansible-galaxy install -r /root/ansible/requirements.yml
+
 #just run to enable ansible-pull timer when booted
 ansible-pull \
-    --verbose \
     --private-key ${KEY} \
     -i "$(hostname --short)" \
     -l "$(hostname --short)" \
@@ -13,5 +14,4 @@ ansible-pull \
     --full \
     --checkout main \
     --directory /root/ansible \
-    --force \
-    --sleep 120
+    --force
