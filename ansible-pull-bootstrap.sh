@@ -1,8 +1,8 @@
 #!/bin/sh
 
 mv /root/ansible-pull-cron /etc/cron.d/ansible-pull
-chown root:root /etc/cron.d/ansible-pull
-chmod 644 /etc/cron.d/ansible-pull
+#chown root:root /etc/cron.d/ansible-pull
+#chmod 644 /etc/cron.d/ansible-pull
 mv /root/ssh_config /root/.ssh/config
 chown -R root:root /root
 chmod -R o-rwx,g-rwx /root
