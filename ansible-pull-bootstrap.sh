@@ -1,5 +1,7 @@
 #!/bin/sh
 
+inventory_hostname=$(hostname -s | sed -e s'/-wifi$//g')
+
 #mv /root/ansible-pull-cron /etc/cron.d/ansible-pull
 #chown root:root /etc/cron.d/ansible-pull
 #chmod 644 /etc/cron.d/ansible-pull
@@ -8,7 +10,7 @@ chown -R root:root /root
 chmod -R o-rwx,g-rwx /root
 chmod 644 /root/.ssh/config
 mkdir -p /etc/ansible
-echo "$(hostname --short) ansible_connection=local" > /etc/ansible/hosts
+echo "${inventory_hostname} ansible_connection=local" > /etc/ansible/hosts
 git clone git@github.com:thomasdelaet/ansible.git /root/ansible
 chown -R root:root /root
 chmod -R o-rwx,g-rwx /root
