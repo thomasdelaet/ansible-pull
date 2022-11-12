@@ -2,6 +2,12 @@
 
 KEY="/root/.ssh/deployment_key"
 
+export PATH=$PATH:/usr/local/bin
+
+apt-get -y install python3-pip
+
+pip3 install ansible
+
 ansible-galaxy install -r /root/ansible/requirements.yml
 
 inventory_hostname=$(hostname -s | sed -e s'/-wifi$//g')
