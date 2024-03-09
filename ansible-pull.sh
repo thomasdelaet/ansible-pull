@@ -6,7 +6,7 @@ export PATH=$PATH:/usr/local/bin
 
 apt-get -y install python3-pip
 
-pip3 install ansible
+PIP_BREAK_SYSTEM_PACKAGES=1 pip3 install ansible
 
 ansible-galaxy install -r /root/ansible/requirements.yml
 

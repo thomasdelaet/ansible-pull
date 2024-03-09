@@ -5,7 +5,10 @@ inventory_hostname=$(hostname -s | sed -e s'/-wifi$//g')
 #mv /root/ansible-pull-cron /etc/cron.d/ansible-pull
 #chown root:root /etc/cron.d/ansible-pull
 #chmod 644 /etc/cron.d/ansible-pull
-mv /root/ssh_config /root/.ssh/config
+if [ ! -f "/root/.ssh/config" ]
+then
+    mv /root/ssh_config /root/.ssh/config
+fi
 chown -R root:root /root
 chmod -R o-rwx,g-rwx /root
 chmod 644 /root/.ssh/config
