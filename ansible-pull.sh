@@ -13,7 +13,7 @@ ansible-galaxy install -r /root/ansible/requirements.yml
 inventory_hostname=$(hostname -s | sed -e s'/-wifi$//g')
 
 #just run to enable ansible-pull timer when booted
-ansible-pull \
+PIP_BREAK_SYSTEM_PACKAGES=1 ansible-pull \
     --private-key ${KEY} \
     -i "${inventory_hostname}" \
     -l "${inventory_hostname}" \
