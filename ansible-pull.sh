@@ -11,7 +11,7 @@ PIP_BREAK_SYSTEM_PACKAGES=1 pip3 install ansible
 
 ansible-galaxy install -r /root/ansible/requirements.yml
 
-inventory_hostname=$(hostname -s | sed -e s'/-wifi$//g')
+inventory_hostname="$(hostname -d | cut -d'.' -f1)--$(hostname -s | sed -e s'/-wifi$//g')"
 
 #just run to enable ansible-pull timer when booted
 PIP_BREAK_SYSTEM_PACKAGES=1 ansible-pull \
