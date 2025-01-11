@@ -1,6 +1,6 @@
 #!/bin/sh
 
-inventory_hostname=$(hostname -s | sed -e s'/-wifi$//g')
+inventory_hostname=$(hostname -d | cut -d'.' -f1)--$(hostname -s | sed -e s'/-wifi$//g')
 
 #mv /root/ansible-pull-cron /etc/cron.d/ansible-pull
 #chown root:root /etc/cron.d/ansible-pull
