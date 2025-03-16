@@ -7,7 +7,7 @@ export PIP_BREAK_SYSTEM_PACKAGES=1
 
 apt-get -y install python3-pip
 
-PIP_BREAK_SYSTEM_PACKAGES=1 pip3 install ansible
+PIP_BREAK_SYSTEM_PACKAGES=1 pip3 install ansible netaddr
 
 ansible-galaxy install -r /root/ansible/requirements.yml
 
