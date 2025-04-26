@@ -5,6 +5,7 @@ KEY="/root/.ssh/deployment_key"
 export PATH=$PATH:/usr/local/bin
 export PIP_BREAK_SYSTEM_PACKAGES=1
 
+apt-get -y update
 apt-get -y install python3-pip
 
 PIP_BREAK_SYSTEM_PACKAGES=1 pip3 install ansible netaddr
