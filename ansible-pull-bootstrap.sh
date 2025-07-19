@@ -2,9 +2,9 @@
 
 inventory_hostname="$(hostname -d | cut -d'.' -f1)--$(hostname -s | sed -e s'/-wifi$//g')"
 
-mv /root/ansible-pull-cron /etc/cron.d/ansible-pull
-chown root:root /etc/cron.d/ansible-pull
-chmod 644 /etc/cron.d/ansible-pull
+# mv /root/ansible-pull-cron /etc/cron.d/ansible-pull
+# chown root:root /etc/cron.d/ansible-pull
+# chmod 644 /etc/cron.d/ansible-pull
 if [ ! -f "/root/.ssh/config" ]
 then
     mv /root/ssh_config /root/.ssh/config
