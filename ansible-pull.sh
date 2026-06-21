@@ -8,14 +8,14 @@ export PIP_BREAK_SYSTEM_PACKAGES=1
 apt-get -y update
 apt-get -y install python3-pip
 
-PIP_BREAK_SYSTEM_PACKAGES=1 pip3 install ansible netaddr
+pip3 install ansible netaddr
 
 ansible-galaxy install -r /root/ansible/requirements.yml
 
 inventory_hostname="$(hostname -d | cut -d'.' -f1)--$(hostname -s | sed -e s'/-wifi$//g')"
 
 #just run to enable ansible-pull timer when booted
-PIP_BREAK_SYSTEM_PACKAGES=1 ansible-pull \
+ansible-pull \
     --private-key ${KEY} \
     -i "${inventory_hostname}" \
     -l "${inventory_hostname}" \
